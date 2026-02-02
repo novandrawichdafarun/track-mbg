@@ -14,8 +14,8 @@ export async function GET() {
 
     //? Ambil semua data, urut byang terbaru
     const deliveries = await DeliveryBatch.find({})
-      .populate("kitchenId", "name district") //* Ambil field name & district saja dari Kitchen
-      .populate("schoolId", "name address") //* Ambil field name & address saja dari School
+      .populate("kitchenId", "name district location") //* Ambil field name & district saja dari Kitchen
+      .populate("schoolId", "name address location") //* Ambil field name & address saja dari School
       .sort({ createAt: -1 });
 
     return NextResponse.json({ success: true, data: deliveries });
