@@ -82,6 +82,7 @@ const DeliveryBatchSchema: Schema = new Schema(
     },
 
     proofOfDelivery: {
+      recipientName: String,
       photoUrl: String,
       recipientSignature: String,
       notes: String,

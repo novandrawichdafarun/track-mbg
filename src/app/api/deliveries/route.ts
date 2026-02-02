@@ -19,9 +19,10 @@ export async function GET() {
       .sort({ createAt: -1 });
 
     return NextResponse.json({ success: true, data: deliveries });
-  } catch (error: any) {
+  } catch (error) {
+    console.error(error)
     return NextResponse.json(
-      { success: false, error: error.message },
+      { success: false, error: "Internal Server Error" },
       { status: 500 },
     );
   }
